@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hq</groupId>
+    <artifactId>bmall</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <module>bmall-api</module>
+        <module>bamll-service-provider</module>
+        <module>bamll-order-comsumer</module>
+    </modules>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- SpringBoot依赖管理 -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.0.4.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--其他依赖-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.7</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>0.2.0</version>
+            </dependency>
+
+            <!-- hystrix -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                <version>2.0.4.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
